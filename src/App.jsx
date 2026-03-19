@@ -177,7 +177,7 @@ const App = () => {
     setIsChatLoading(true);
 
     try {
-      const apiKey = process.env.REACT_APP_GEMINI_API_KEY || "ISI_API_KEY_DISINI";
+      const apiKey = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_GEMINI_API_KEY) || "ISI_API_KEY_DISINI";
       const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
       const systemPrompt = `Kamu adalah Asisten Konsultan Akreditasi BAN-PDM khusus untuk Madrasah Ibtidaiyah (MI BAS International Tuban). 
       Tugas utamamu HANYA menjawab seputar: instrumen akreditasi 2024/2025 (14 Butir), Kurikulum Berbasis Cinta (KBC), Pembelajaran Sosial Emosional (PSE), pembuktian kinerja guru, dan administrasi madrasah.
@@ -251,7 +251,7 @@ const App = () => {
     const isEng = rppForm.language === 'English';
 
     try {
-      const apiKey = process.env.REACT_APP_GEMINI_API_KEY || "ISI_API_KEY_DISINI";
+      const apiKey = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_GEMINI_API_KEY) || "ISI_API_KEY_DISINI";
       const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
 
       let difStr = [];
@@ -474,7 +474,7 @@ const App = () => {
     const isEng = modulForm.language === 'English';
 
     try {
-      const apiKey = process.env.REACT_APP_GEMINI_API_KEY || "ISI_API_KEY_DISINI";
+      const apiKey = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_GEMINI_API_KEY) || "ISI_API_KEY_DISINI";
       const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
 
       const prompt = `Anda adalah ahli kurikulum, pedagogik MI, dan asesor akreditasi BAN-PDM. Buatkan isi lengkap "Modul Ajar Deep Learning (KBC) Terintegrasi Pembelajaran Sosial Emosional (PSE)" yang terstruktur dan rapi.
@@ -670,7 +670,7 @@ const App = () => {
     setIsGeneratingSop(true); setGeneratedSop(null);
 
     try {
-      const apiKey = process.env.REACT_APP_GEMINI_API_KEY || "ISI_API_KEY_DISINI";
+      const apiKey = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_GEMINI_API_KEY) || "ISI_API_KEY_DISINI";
       const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
 
       let referensiInstruksi = "Gunakan pedoman standar resmi Kementerian Agama Republik Indonesia.";
