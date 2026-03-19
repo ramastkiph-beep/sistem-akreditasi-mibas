@@ -178,7 +178,7 @@ const App = () => {
 
     try {
       const apiKey = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_GEMINI_API_KEY) || "ISI_API_KEY_DISINI";
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
       const systemPrompt = `Kamu adalah Asisten Konsultan Akreditasi BAN-PDM khusus untuk Madrasah Ibtidaiyah (MI BAS International Tuban). 
       Tugas utamamu HANYA menjawab seputar: instrumen akreditasi 2024/2025 (14 Butir), Kurikulum Berbasis Cinta (KBC), Pembelajaran Sosial Emosional (PSE), pembuktian kinerja guru, dan administrasi madrasah.
       Gunakan bahasa yang santai tapi profesional, panggil pengguna dengan sebutan "Bos".
@@ -252,7 +252,7 @@ const App = () => {
 
     try {
       const apiKey = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_GEMINI_API_KEY) || "ISI_API_KEY_DISINI";
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
       let difStr = [];
       if (rppForm.diferensiasi.konten) difStr.push("Diferensiasi Konten / Content Differentiation");
@@ -454,7 +454,7 @@ const App = () => {
       } else throw new Error("Respon AI kosong");
     } catch (error) {
       console.error("Gagal men-generate RPP KBC:", error);
-      alert("Maaf Bos, koneksi ke mesin AI sedang terganggu. Coba klik Generate lagi.");
+      alert("Oops, Error AI: " + error.message);
     } finally {
       setIsGeneratingRpp(false);
     }
@@ -475,7 +475,7 @@ const App = () => {
 
     try {
       const apiKey = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_GEMINI_API_KEY) || "ISI_API_KEY_DISINI";
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
       const prompt = `Anda adalah ahli kurikulum, pedagogik MI, dan asesor akreditasi BAN-PDM. Buatkan isi lengkap "Modul Ajar Deep Learning (KBC) Terintegrasi Pembelajaran Sosial Emosional (PSE)" yang terstruktur dan rapi.
       
@@ -671,7 +671,7 @@ const App = () => {
 
     try {
       const apiKey = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_GEMINI_API_KEY) || "ISI_API_KEY_DISINI";
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
       let referensiInstruksi = "Gunakan pedoman standar resmi Kementerian Agama Republik Indonesia.";
       if (sopForm.konteks === 'kepegawaian') referensiInstruksi = "Gunakan SECARA MUTLAK 'Keputusan Ketua Yayasan Bahrul Huda Tuban Nomor 01 Tahun 2024 tentang Peraturan Kepegawaian' sebagai dasar hukum urutan pertama.";
